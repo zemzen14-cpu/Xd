@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: inspector-bot
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn bot:server"
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: RENDER_URL
+        sync: false
