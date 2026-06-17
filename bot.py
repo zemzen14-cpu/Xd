@@ -55,7 +55,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url="https://TU-RENDER-URL.onrender.com/" + TOKEN)
+    bot.set_webhook(url="https://xd-2-ybyd.onrender.com/" + TOKEN)
     return "Webhook set", 200
 
 # -----------------------------
