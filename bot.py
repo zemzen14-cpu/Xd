@@ -15,7 +15,7 @@ server = Flask(__name__)
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.reply_to(message, "🔥 Bot activo y funcionando con gTTS, Cristopher!")
+    bot.reply_to(message, "🔥 Bot activo y resonando entre luz y sombra, Cristopher.")
 
 @bot.message_handler(commands=['voz'])
 def voz(message):
@@ -24,6 +24,9 @@ def voz(message):
     if texto == "":
         bot.reply_to(message, "🎙️ Usa /voz seguido del texto.\nEjemplo:\n/voz Hola Cristopher")
         return
+
+    # Mensaje previo angelical oscuro
+    bot.reply_to(message, "🌑✨ Transformando tu voz en oscuridad…")
 
     # Crear audio temporal
     tts = gTTS(text=texto, lang="es")
@@ -37,9 +40,11 @@ def voz(message):
     # Borrar archivo temporal
     os.remove(temp.name)
 
-@bot.message_handler(func=lambda m: True)
-def echo(message):
-    bot.reply_to(message, f"📩 Dijiste: {message.text}")
+# -----------------------------
+# SIN ECO — NO RESPONDE A MENSAJES NORMALES
+# -----------------------------
+
+# (No hay handler para mensajes normales)
 
 # -----------------------------
 # WEBHOOK PARA RENDER
